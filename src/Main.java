@@ -9,6 +9,8 @@ public class Main {
         }
         int score = bowlingGame.getScore();
         System.out.println(score);
-
+        
+        StringBuilder result = bowlingGame.showFramesScore();
+        System.out.println(result);
     }
 }
