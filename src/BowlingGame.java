@@ -4,6 +4,7 @@ import java.util.List;
 public class BowlingGame {
     private List<Frame> frames;
     private Frame currentFrame;
+    private int score;
 
     public BowlingGame(List<Frame> frames,Frame currentFrame){
         this.frames = frames;
@@ -11,15 +12,18 @@ public class BowlingGame {
     }
 
     public void roll(int hits){
-        if(!isEnd()){
+        if(currentFrame.isEnd()){
             currentFrame = new Frame(new ArrayList<>());
             frames.add(currentFrame);
+
         }
         currentFrame.roll(hits);
     }
 
     public int getScore(){
-        int score = currentFrame.getScore();
+        for(Frame frame : frames){
+            this.score += frame.getScore();
+        }
         return score;
     }
 

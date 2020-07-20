@@ -7,16 +7,11 @@ public class Frame {
         this.rolls = rolls;
     }
 
-    public List<Integer> getRolls(){
-        return rolls;
-    }
-
     //hits 表示每一次的倒瓶数
     public void roll(int hits){
         if(!isEnd()){
             rolls.add(hits);
         }
-
     }
 
     public int getScore(){
